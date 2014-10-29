@@ -1,0 +1,114 @@
+.text-shadow{
+	text-shadow: 1px 1px 1px #000;	
+}
+
+.navbar{
+	-webkit-backface-visibility: hidden;
+}
+
+#content{
+	/*background-color: #2d2d2d;	*/
+	/*background-color: rgba(45,45,45, 0.2);*/
+	/*background-color: rgba(34,34,34, 1);*/
+
+	/*background-color: #222222;*/
+/*	margin-top: -20px;
+	padding-top: 20px;*/
+
+}
+/*
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+*/
+
+.logo{
+	font-size: 22px;
+	text-shadow: 2px 2px 2px #2d2d2d;
+	color : #e8e6df;
+	background-color: #2d2d2d;
+	padding: 2px 4px;
+	font-family: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+	line-height: 1.375;
+	direction: ltr;
+	text-align: left;
+	word-spacing: normal;
+	/*color: #99cc99;*/
+	border: .1em solid hsl(0, 0%, 33%);
+}
+.cursor{
+	position : relative;
+	bottom : 1.6px;
+	margin-left:  -10px;
+	font-size: 17px;
+	opacity: 1;
+	-webkit-animation: blink 1s infinite;
+	animation: blink 1s infinite;
+
+}
+
+@keyframes blink{
+	0% { opacity:1; }
+	40% { opacity:1;}
+	60% { opacity:0; }
+	80% { opacity:0; }
+	100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+	0% { opacity:1; }
+	40% { opacity:1;}
+	60% { opacity:0; }
+	80% { opacity:0; }
+	100% { opacity:1; }
+}
+.transition-smooth{
+	transition: width .3s ease-in-out;
+}
+.expand{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	font-size: 15px;
+	/*color : #6699cc;*/
+		text-shadow: 0px 0px 1px #000;
+		cursor: pointer;	
+}
+.dark{
+	color: rgb(20, 20, 20);
+
+}
+.expand .fa-inverse{
+	color: rgb(84, 84, 84);
+}
+
+hr{
+	visibility: hidden;
+	height :0;
+}
+.preview{
+	/*width : 500px;*/
+	/*height : 200px;*/
+	overflow : hidden;
+}
+
+.navbar-bottom{
+	margin-bottom: 0;
+}
+
+.heading-pad{
+	padding-top:40px;
+} 
+
+h1,h2,h3{
+	text-shadow: 1px 1px 1px #000000;	
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+	background-color: #222222;
+	background-image: url("http://subtlepatterns.com/patterns/dark_wall.png");
+}
+

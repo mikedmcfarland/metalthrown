@@ -1,0 +1,10 @@
+extends ./main.jade
+doctype html
+block content
+    ol  
+        each post in collections.posts
+            a(href='#{post.path}')
+                h2  !{post.title}
+
+            article !{post.excerpt}
+
