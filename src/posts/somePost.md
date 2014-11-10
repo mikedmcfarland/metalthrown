@@ -1,14 +1,22 @@
 ---
-title: This is a title
+title: some post
+date: 2013-05-21
 ---
+Lorem markdownum, cum nimbos latus longum, duro iam adferre peremptam ulvis,
+ianua. Frigus dare riguisse secant!
 
-## Tauros quae vota mirum tenuere quae dumque
+**Nil pariter patitur** terraeque aratro; **tamen sed mea** carchesia, ligat
+erat. Vinctoque ignem manus Salmacis delubraque greges. Fata mihi *magni adstas*
+lacus, ut pereat dum non.
 
+## Modo foremo
+Cor tamen percensuit ventis arma, sit pars quique curru reliquit numerum titulum
+adversaque. Achaidas tibi: Halesi Hyantius nebulas desit rogato: nec cum per
+nulla; animos venabula. Tenus omnes auferat soleat per quid: **placido
+consuetissima** quae [nomine](http://zombo.com/), dedit carmen Sibylla nescius
+*adsiduis*. Durus quae moenibus pecus Niobe loquentem ora timor per sagax
+Lynceus!
 
-respiceret; de pulsa ideoque capillis fluctibus; ait. Quod lege non, ab positis longa inde, est modo pudorem, forma silva.
-
----
-## Modo forem
 
 ```bash
 # move focused window
@@ -28,13 +36,6 @@ bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 
-```
-
-```javascript
-asdfasdf
-asdfasdf
-asdfasdf
-asdfasdf
 ```
 
 Lorem markdownum an, peregit nondum ut sanguis certis, non nec vipereos profusis
@@ -65,8 +66,7 @@ sanguine aera, iam sed te colatur.
 - Deerat cum draconum reddant
 
 
----
-## Something
+## Something else
 
 Ulixem saepe, carnes praecipites Eurotan receptus summoque tempora est! Quamvis diversa, Erinys luminibus rogant circuitu ac eumque supponat ego, genitor nec manus precaria sacra, te.
 
@@ -89,7 +89,6 @@ Tibi in ignes Palatinae, inmutat eadem cum amomo sequente! Ense dixit Echinadas 
 respiceret; de pulsa ideoque **capillis fluctibus**; ait. Quod lege non, ab
 positis longa *inde*, est modo pudorem, forma silva.
 
----
 
 ## Something
 
@@ -112,7 +111,6 @@ genitor nec manus precaria sacra, te.
 Tibi in ignes Palatinae, inmutat eadem cum amomo sequente! Ense dixit Echinadas
 loquendi animum, inpleratque, limes portus armatus scintilla ad mihi etiam.
 
----
 
 
 ## Non certe certius constitit facta taedia inferior

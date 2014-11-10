@@ -5,95 +5,69 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     block css
         link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
-        link(rel="stylesheet", type="text/css", href="/css/eighties-dark.css")
+        link(rel="stylesheet", type="text/css", href="/css/bootstrap/default-bright2.css")
         link(rel="stylesheet", type="text/css", href="/css/main.css")
+        link(rel="stylesheet", type="text/css", href="/css/base16-monokai.dark.css")
         link(href='http://fonts.googleapis.com/css?family=Raleway:400,700', rel='stylesheet', type='text/css')
         link(href='http://fonts.googleapis.com/css?family=Inconsolata', rel='stylesheet', type='text/css')
 
         //- link(rel="stylesheet", type="text/css", href=root+"public/style/prism-base16-eighties-dark.css")
-        link(rel="stylesheet", type="text/css", href="/css/prism.css")
 
-  body(role="document")
-    block header
-        .navbar.navbar-default.shadow(role="navigation"): .container
-            .navbar-header
-                button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
-                    span.sr-only Toggle navigation
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                a.navbar-brand(href="/") 
-                    img.pull-right(src="/img/logo.png", alt="logo" height='50' width='50')
-                    span.logo thrown 
-                        span.cursor |
-            .navbar-collapse.collapse
-                    ul.nav.navbar-nav: li: .btn-toolbar
-                        a(href="/" role="button").btn.navbar-btn.text-shadow
-                            i.fa.fa-home
-                            |  Home
-                        a(href="/", role="button").btn.navbar-btn.text-shadow
-                            i.fa.fa-question
-                            |  About
-                    ul.nav.navbar-nav.navbar-right: li: .btn-toolbar
-                        a(href="/", role="button", data-toggle="button",id="theme").btn.navbar-btn.text-shadow
-
-                            i.fa.fa-lightbulb-o
-                            |  Theme
-
-        //- #loading.progress.floating-progress
-    //-   .progress-bar.progress-striped.active(role="progressbar" style='width: 50%') 
-    //-     span loading...
+  body(role="document", data-spy="scroll", data-target="#affix-nav")
+        block navigation
+            .navbar.navbar-inverse.shadow(role="navigation")
+                .container
+                    .navbar-header
+                        button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href="/") 
+                            img.pull-right.logo-img(src="/img/logo.png", alt="logo" )
+                            span.logo thrown 
+                                span.cursor |
+                    .navbar-collapse.collapse
+                            ul.nav.navbar-nav: li: .btn-toolbar
+                                a(href="/" role="button").btn.btn-lg.text-shadow
+                                    i.fa.fa-home
+                                    |  Home
+                                a(href="/", role="button").btn.btn-lg.text-shadow
+                                    i.fa.fa-question
+                                    |  About
 
     .container(role="main")
-        #content
-            block content
-        //- .well
-        //-     | respiceret; de pulsa ideoque capillis fluctibus; ait. Quod lege non, ab positis longa inde, est modo pudorem, forma silva.
+        block header 
+        .row
+            #content.col-md-8
+                block content
+            #side.col-md-4
+                block side
 
-        //- .well
-        //-     | Tibi in ignes Palatinae, inmutat eadem cum amomo sequente! Ense dixit Echinadas loquendi animum, inpleratque, limes portus armatus scintilla ad mihi etiam|
-        
-        
-            
-        //- .row
-        //-     .col-md-9.col-md-push-3
-        //-         #content
-        //-     .col-md-3.col-md-pull-9 
-        //-         | Something else is here
-       
-             
-
-        ul.pager
-          li: a(href="#") Some Post Title
-          li: a(href="#") Next Post Title
-
-        #disqus_thread
-        script(type="text/javascript").
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'thrownforaloop'; // required: replace example with your forum shortname
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-
-
-    block footer
-        .navbar.navbar-default.navbar-bottom(role="navigation"): .container
-                ul.nav.navbar-nav
-                    li: .btn-toolbar
-                            a(href="/" role="button").btn.navbar-btn.text-shadow
-                                i.fa.fa-home
-                                |  Home
-                            a(href="/", role="button").btn.navbar-btn.text-shadow
-                                i.fa.fa-question
-                                |  About
+        //-block footer
+            .navbar.navbar-default.navbar-bottom(role="navigation"): .container
+                    ul.nav.navbar-nav
+                        li: .btn-toolbar
+                                a(href="/" role="button").btn.navbar-btn.text-shadow
+                                    i.fa.fa-home
+                                    |  Home
+                                a(href="/", role="button").btn.navbar-btn.text-shadow
+                                    i.fa.fa-question
+                                    |  About
 
     block scripts
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+        //-script.
+            $('h2,h3,h4').attr('data-spy','affix')
         script(type="text/javascript", src="/js/bootstrap.min.js")
         script(type="text/javascript", src="/js/prism.js")
+       //--     script.
+                $(document).ready(function(){
+                    $("#sid").affix({
+                        offset: { 
+                            top: 190 
+                        }
+                    });
+                });
 
 

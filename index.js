@@ -1,3 +1,4 @@
+//Metal-smith dependencies
 var Metalsmith  = require('metalsmith')
     markdown    = require('metalsmith-markdown')
     templates   = require('metalsmith-templates')
@@ -6,17 +7,21 @@ var Metalsmith  = require('metalsmith')
     drafts      = require('metalsmith-drafts')
     excerpts    = require('metalsmith-excerpts')
     less        = require('metalsmith-less')
-    serve       = require('metalsmith-serve')
     feed        = require('metalsmith-feed')
     watch       = require('metalsmith-watch')
     fileMetaData= require('metalsmith-filemetadata')
-    branch      = require('metalsmith-branch')
+    headings    = require('metalsmith-headings')
 
-var root = __dirname;
+var updatePaths = require('./metalsmith/updatePaths')
+    wrap        = require('./metalsmith/wrap')
 
 var minimist = require('minimist')
+
 var argv = minimist(process.argv.slice(2))
 var devMode = argv._.indexOf('dev') !== -1
+
+
+//App dependencies
 
 var collectionsDefs = {
     posts: {
@@ -28,13 +33,7 @@ var collectionsDefs = {
     }
 }
 
-var updatePaths = function(files, metalsmith, done){
-    for(var key in files){
-        files[key].path = key;
-    }
-    done();
-};
-
+var root = __dirname;
 var metalSmith = Metalsmith(root)
     .metadata({
         site : {
@@ -43,7 +42,7 @@ var metalSmith = Metalsmith(root)
              author: 'Michael McFarland'
         }
     })
-    .destination(root + '/build')
+    // .destination(root + '/build')
     .use(drafts())
     .use(fileMetaData([
         {pattern: 'posts/*.md', preserve: true, metadata: {template:'post.jade'}},
@@ -52,7 +51,9 @@ var metalSmith = Metalsmith(root)
     .use(collections(collectionsDefs))
     .use(markdown())
     .use(excerpts())
-    .use(less())
+    .use(headings(['h1','h2']))
+    .use(wrap())
+       // .use(less())
     .use(permalinks({
         pattern: ':collection/:title'
     }))
@@ -68,11 +69,17 @@ var metalSmith = Metalsmith(root)
     //    done()
     // })
 
-
 if(devMode){
     metalSmith.use(watch({
         livereload: true
     }))
+}
+
+function convertToSlug(test){
+    return test
+        .toLowerCase()
+        .replace(/[^\w ]+/g,'')
+        .replace(/ +/g,'-')
 }
 
 metalSmith
@@ -80,3 +87,4 @@ metalSmith
         if(err)
             console.error('error building',err)
     })
+

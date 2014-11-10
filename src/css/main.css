@@ -2,9 +2,6 @@
 	text-shadow: 1px 1px 1px #000;	
 }
 
-.navbar{
-	-webkit-backface-visibility: hidden;
-}
 
 #content{
 	/*background-color: #2d2d2d;	*/
@@ -15,6 +12,7 @@
 /*	margin-top: -20px;
 	padding-top: 20px;*/
 
+	/*background-image: url("http://subtlepatterns.com/patterns/dark_wall.png");*/
 }
 /*
 @media (min-width: 1200px) {
@@ -23,12 +21,18 @@
   }
 }
 */
+.btn:hover{
+	text-bottom
+}
 
 .logo{
-	font-size: 22px;
+	font-size: 28px;
 	text-shadow: 2px 2px 2px #2d2d2d;
-	color : #e8e6df;
-	background-color: #2d2d2d;
+	/*color : #e8e6df;*/
+	color : rgb(248, 248, 242);
+	/*background-color: #1d1f21;*/
+	/*background-color: #383830;*/
+	/*background-color: rgb(39, 40, 34);*/
 	padding: 2px 4px;
 	font-family: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
 	line-height: 1.375;
@@ -36,13 +40,19 @@
 	text-align: left;
 	word-spacing: normal;
 	/*color: #99cc99;*/
-	border: .1em solid hsl(0, 0%, 33%);
+	/*border: .05em solid #49483e;*/
+}
+.logo-img{
+	z-index: 1;
+	height:50px;
+	width:50px;
+	position: relative;
 }
 .cursor{
 	position : relative;
-	bottom : 1.6px;
-	margin-left:  -10px;
-	font-size: 17px;
+	bottom : 1.9px;
+	margin-left:  -12px;
+	font-size: 22px;
 	opacity: 1;
 	-webkit-animation: blink 1s infinite;
 	animation: blink 1s infinite;
@@ -67,48 +77,194 @@
 .transition-smooth{
 	transition: width .3s ease-in-out;
 }
-.expand{
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-size: 15px;
-	/*color : #6699cc;*/
-		text-shadow: 0px 0px 1px #000;
-		cursor: pointer;	
-}
-.dark{
-	color: rgb(20, 20, 20);
 
-}
-.expand .fa-inverse{
-	color: rgb(84, 84, 84);
-}
 
-hr{
-	visibility: hidden;
-	height :0;
-}
-.preview{
-	/*width : 500px;*/
-	/*height : 200px;*/
-	overflow : hidden;
-}
 
-.navbar-bottom{
-	margin-bottom: 0;
+/*h1,h2,h3,p,li{
+
+	background-color: rgba(34,34,34,.66);
 }
+*/
 
-.heading-pad{
-	padding-top:40px;
-} 
-
-h1,h2,h3{
-	text-shadow: 1px 1px 1px #000000;	
+.btn:hover{
+	color : #f4bf75;
+}
+a:hover{
+	color: #fd971f;
+	/*font-weight: bold;*/
+	/*color: #f92672;*/
+	/*color: #a6e22e;*/
 }
 
 body{
 	font-family: 'Raleway', sans-serif;
-	background-color: #222222;
-	background-image: url("http://subtlepatterns.com/patterns/dark_wall.png");
+	font-size: 18px;
+
+	/*background-color: rgba(34,34,34,1);*/
+	/*background-image: url("http://subtlepatterns.com/patterns/dark_wall.png");*/
+	/*background-image: url("http://subtlepatterns.com/patterns/stressed.png");*/
+}
+.navbar-inverse{
+	background-color: rgb(39, 40, 34);
+	/*padding-top:10px;*/
+	/*padding-bottom:10px;*/
+	border-radius: 0;
+	margin-bottom: 0;
+	border-width: 3px;
+	border-bottom-color: #75715e ;
+	/*border-top-left-radius: 0px;*/
+	/*border-top-right-radius: 0px;*/
+
+	/*height: 100px;*/
 }
 
+#affix-nav{
+	margin-top:0;
+	margin-bottom: 0;
+	font-size: 14px;	
+}
+html, body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; 
+}
+
+/*#affix-nav .active a{
+	border-left: 2px solid #563d7c;
+	
+}
+*/  /* inline code */
+ code {
+/*  font-family: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  word-spacing: normal;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; 
+  white-space: pre; 
+  white-space: pre-wrap; 
+  word-break: break-all;
+  word-wrap: break-word; 
+  background-color: rgb(39, 40, 34);
+ 	color: #b5bd68;
+*/
+   color: #f9f8f5;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  word-spacing: normal;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; 
+  white-space: pre; 
+  white-space: pre-wrap; 
+  word-break: break-all;
+  word-wrap: break-word; 
+  background: #272822; 
+  color: #f8f8f2;
+
+
+ }
+
+ .page-header{
+ 	padding-top: 70px;
+ 	margin-top:0;
+ 	font-size: 36px;
+ 	/*border-top-color: #fff;*/
+ 	/*border-width: 2px;*/
+ }
+
+ .center{
+ 	width: 50%;	
+ 	margin: 0 auto;
+ }
+
+ .invert pre{
+ 	padding-right:0 !important;
+ 	padding-leftH:0 !important;
+ 	border: 0;
+	/*border: 3px solid #383830; */
+ }
+ .invert{
+ 	color: rgb(248, 248, 242);
+ 	position: relative;
+ 	background-color: rgb(39, 40, 34);
+ }
+ .invert:before, .invert:after
+ {
+ 	content:"";
+	background-color: rgb(39, 40, 34);
+ 	position:absolute;
+ 	top:0;
+ 	bottom:0;
+ 	width: 3000px;
+ }
+ .invert:before
+ {
+ 	right:100%;
+ }
+ .invert:after
+ {
+ 	left:100%;
+ }
+
+ footer{
+ 	padding-top: 4px
+ }
+
+ footer .pager{
+ 	margin-bottom : 50px;
+ }
+ footer a{
+ 	margin-left:25px;
+ 	margin-right:25px;
+ }
+
+/* .invert{
+ 	position: relative;
+ 	background-color: rgb(39, 40, 34);
+ }
+ .invert:before, .invert:after
+ {
+ 	content:"";
+	background-color: rgb(39, 40, 34);
+ 	position:absolute;
+ 	top:0;
+ 	bottom:0;
+ 	width: 3000px;
+ }
+ .invert:before
+ {
+ 	right:100%;
+ }
+ .invert:after
+ {
+ 	left:100%;
+ } */
+/* .extendfull, .extendleft
+{
+	padding-left: 3000px;
+	margin-left: -3000px;
+}
+
+.extendfull, .extendright
+{
+	padding-right: 3000px;
+	margin-right: -3000px;
+}*/

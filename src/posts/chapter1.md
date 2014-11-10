@@ -1,21 +1,12 @@
 ---
-title: a post with a really long title because thats fun
-date: 2013-02-21
-draft: false
+title: chapter 1
+date: 2013-03-21
 ---
 
 # Me alumnae tectum rector
 something changesdfasd Aasdffasdasdfasdfasdff
 asdf it seemingly works her asdfasdfasdfe
-that's interestin
-
-
-asfdasdfasdf
-asdf
-asdfasdf
-
-
-## Per lyraeque caesaries oculos suscitat legesque o
+that's interesting
 
 Lorem markdownum [gregibus tua cedunt](http://hipstermerkel.tumblr.com/) terrae;
 tu novit est exempla populator femina te unda sorores tabellis, morando.
@@ -48,7 +39,7 @@ negarent **divitis succurritis teste**. Nullis est mendacia ore volat est
 taurorum Clymeneia adiecisse lumina, dixit intabescere aureus, qui per Deucalion
 deseruit herba.
 
-### Ab humanae celatur in crurorem mari petis
+## Ab humanae celatur in crurorem mari petis
 
 Remeabat Sirenes. Haec tenet pius cumque ille qua heros terram, minimo sacra
 quae. Vulnus Lydos, diu cedere saliunt. Vidisset repandus vulnere et parente
