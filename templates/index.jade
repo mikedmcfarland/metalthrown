@@ -1,9 +1,34 @@
 extends ./main.jade
 doctype html
 block content
-    each post in collections.posts
-        a(href='#{post.path}')
-            h2  !{post.title}
-
+  h1(id='page-header').page-header.invert most recent posts
+  each post in collections.posts
+    a(href=post.path): h2.relax  !{post.title}
+    .row
+      .col-md-8
         article !{post.excerpt}
+      .col-md-4
+        .post-info
+          //- - var tags = ['code','asdf']
+          - var tagIcons = {game:'fa fa-gamepad',code:'fa fa-code-fork',linux:'fa fa-linux'}
+          - var defaultIcon = 'fa fa-coffee'
 
+          if post.tags
+            each tag in post.tags
+              - var icon = tagIcons[tag] ? tagIcons[tag] : defaultIcon
+              //- - var icon = tagIcons[tag]
+              i(class=icon)
+          span
+            i.fa.fa-comment-o.pull-right
+            a(href='#{post.path}#disqus_thread').pull-right
+  script(type="text/javascript").
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'thrownforaloop'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());

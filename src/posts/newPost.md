@@ -1,6 +1,8 @@
 ---
 title: new post
 date: 2013-03-11 
+tags:
+  - linux
 ---
 
 # Me alumnae tectum rector

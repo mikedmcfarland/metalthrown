@@ -1,6 +1,8 @@
 ---
 title: chapter 1
 date: 2013-03-21
+tags:
+  - asdf
 ---
 
 # Me alumnae tectum rector

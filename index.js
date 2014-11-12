@@ -14,14 +14,11 @@ var Metalsmith  = require('metalsmith')
 
 var updatePaths = require('./metalsmith/updatePaths')
     wrap        = require('./metalsmith/wrap')
-
-var minimist = require('minimist')
+    minimist    = require('minimist')
 
 var argv = minimist(process.argv.slice(2))
 var devMode = argv._.indexOf('dev') !== -1
 
-
-//App dependencies
 
 var collectionsDefs = {
     posts: {
@@ -42,7 +39,7 @@ var metalSmith = Metalsmith(root)
              author: 'Michael McFarland'
         }
     })
-    // .destination(root + '/build')
+    .destination(root + '/build')
     .use(drafts())
     .use(fileMetaData([
         {pattern: 'posts/*.md', preserve: true, metadata: {template:'post.jade'}},
@@ -73,13 +70,6 @@ if(devMode){
     metalSmith.use(watch({
         livereload: true
     }))
-}
-
-function convertToSlug(test){
-    return test
-        .toLowerCase()
-        .replace(/[^\w ]+/g,'')
-        .replace(/ +/g,'-')
 }
 
 metalSmith

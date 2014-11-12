@@ -8,41 +8,65 @@ html(lang="en")
         link(rel="stylesheet", type="text/css", href="/css/bootstrap/default-bright2.css")
         link(rel="stylesheet", type="text/css", href="/css/main.css")
         link(rel="stylesheet", type="text/css", href="/css/base16-monokai.dark.css")
-        link(href='http://fonts.googleapis.com/css?family=Raleway:400,700', rel='stylesheet', type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Raleway:800,400', rel='stylesheet', type='text/css')
         link(href='http://fonts.googleapis.com/css?family=Inconsolata', rel='stylesheet', type='text/css')
 
         //- link(rel="stylesheet", type="text/css", href=root+"public/style/prism-base16-eighties-dark.css")
 
   body(role="document", data-spy="scroll", data-target="#affix-nav")
         block navigation
-            .navbar.navbar-inverse.shadow(role="navigation")
-                .container
+            header.navbar.navbar-inverse.shadow(role="navigation")
+                nav.container
                     .navbar-header
-                        button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target=".navbar-collapse")
-                            span.sr-only Toggle navigation
-                            span.icon-bar
-                            span.icon-bar
-                            span.icon-bar
                         a.navbar-brand(href="/") 
                             img.pull-right.logo-img(src="/img/logo.png", alt="logo" )
                             span.logo thrown 
                                 span.cursor |
-                    .navbar-collapse.collapse
-                            ul.nav.navbar-nav: li: .btn-toolbar
-                                a(href="/" role="button").btn.btn-lg.text-shadow
-                                    i.fa.fa-home
-                                    |  Home
-                                a(href="/", role="button").btn.btn-lg.text-shadow
-                                    i.fa.fa-question
-                                    |  About
+                    .navbar-nav
+                        a(role="button" data-toggle="collapse" data-target="#about").btn.btn-lg
+                            |  about me
+                #about.collapse
+                         .container 
+                           
+                            ul.media-list
+                                li
+                                    .media-left.media-middle
+                                        img(src="/img/me_big.jpg").img-circle.img-responsive
+                                    .media-body.media-middle
+                                        p
+                                            | Hi, My name is 
+                                            strong Michael McFarland 
+                                            | . I have an infatuation with programming which has forced me into creating games and interactive applications. 
+                                            | I enjoy conversing about technology, and made 
+                                            strong thrown for a loop 
+                                            | to help me do so while giving those around me a rest.
+                                li
+                                    .media-left.media-middle
+                                        img(src="/img/game.jpg").img-rounded.img-responsive
+                                    .media-body.media-middle
+                                        p
+                                            | As you read this I'm working on a 
+                                            strong puzzle strategy game
+                                            | , which is in serious need of a name. 
+                                            | In a previous life I made serious games and interactives for 
+                                            a(href='http://secondavenuelearning.com/') Second Avenue Learning
+                                            | , until I made the leap and left to focus on my own
+                                            | projects. Ill post updates about those here.
+                                li
+                                    .media-left.media-middle
+                                        #contact
+                                            i.fa.fa-github-square
+                                            i.fa.fa-bitbucket-square
+                                            i.fa.fa-linkedin-square
+
+                                    .media-body.media-middle
+                                        p
+                                            | Interested in working together?  Feel free to contact me.
+
 
     .container(role="main")
         block header 
-        .row
-            #content.col-md-8
-                block content
-            #side.col-md-4
-                block side
+        block content
 
         //-block footer
             .navbar.navbar-default.navbar-bottom(role="navigation"): .container

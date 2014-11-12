@@ -1,7 +1,11 @@
 ---
 title: some post
 date: 2013-05-21
+tags: 
+  - code
+  - game
 ---
+
 Lorem markdownum, cum nimbos latus longum, duro iam adferre peremptam ulvis,
 ianua. Frigus dare riguisse secant!
 
