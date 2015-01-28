@@ -1,3 +1,6 @@
 [submodule "src/posts"]
 	path = src/posts
-	url = https://github.com/mikedmcfarland/thrownposts
+	url = https://github.com/mikedmcfarland/thrown.posts
+[submodule "build"]
+	path = build
+	url = https://github.com/mikedmcfarland/mikedmcfarland.github.io.git
