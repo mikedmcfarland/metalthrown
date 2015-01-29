@@ -1,4 +1,15 @@
 {
-"asi" : true,
-"esnext": true
+  "esnext"  : true,
+  "asi"  : true,
+  "node" : true,
+  "globals"   : {
+    /* MOCHA */
+    "after"      : false,
+    "afterEach"  : false,
+    "before"     : false,
+    "beforeEach" : false,
+    "describe"   : false,
+    "it"         : false,
+    "xit"        : false
+  }
 }
