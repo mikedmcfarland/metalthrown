@@ -8,15 +8,12 @@
   },
   "author": "Michael McFarland",
   "dependencies": {
-    "cheerio": "^0.18.0",
     "express": "^4.10.0",
-    "gulp": "^3.8.10",
-    "gulp-livereload": "^3.6.0",
     "jade": "^1.7.0",
     "jquery": "^2.1.3",
     "jsdom": "^3.1.0",
+    "livereload": "^0.3.6",
     "lodash": "^2.4.1",
-    "make-livereload": "^0.1.1",
     "metalsmith": "^1.0.1",
     "metalsmith-collections": "^0.6.0",
     "metalsmith-drafts": "0.0.1",
@@ -29,11 +26,8 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",
     "metalsmith-templates": "^0.6.0",
-    "metalsmith-watch": "^0.1.1",
-    "minimist": "^1.1.0",
     "nodemon": "^1.3.5",
     "promise": "^6.1.0",
-    "serve": "^1.4.0",
     "shelljs": "^0.3.0"
   },
   "devDependencies": {

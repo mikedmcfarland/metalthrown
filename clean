@@ -1,0 +1,5 @@
+#!/bin/bash
+SCRIPTPATH=`pwd -P`
+BUILDPATH="$SCRIPTPATH/build/*"
+echo "cleaning $BUILDPATH"
+rm -rf $BUILDPATH

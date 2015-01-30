@@ -1,0 +1,44 @@
+#!/usr/bin/emacs --script
+;;; This script will build all the org files located under src
+
+;; disable auto-save and auto-backup
+(setq auto-save-default nil)
+(setq make-backup-files nil)
+
+(require 'org)
+
+;;Some publishing settings
+
+ (setq org-export-with-author nil)
+ (setq org-export-with-toc nil)
+ (setq org-html-head-include-default-style nil)
+ (setq org-html-head-include-scripts nil)
+ (setq org-html-html5-fancy t)
+ (setq org-html-htmlize-output-type (quote css))
+ (setq org-html-postamble nil)
+ (setq org-html-preamble nil)
+
+
+(defvar src (expand-file-name "src" (file-name-directory load-file-name))
+  "where to build all the org files")
+
+;;Notice: Backtick and commmas here, src must be evaluated, but other parts must not?
+;;http://stackoverflow.com/questions/9449364/elisp-alist-and-strings-type-confusion
+
+(princ (format "%s%s" "publishing org files in " src))
+(setq org-publish-project-alist
+      `(("org-thrown"
+         :base-directory ,src
+         :base-extension "org"
+
+         :publishing-directory ,src
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :html-extension "html"
+         :body-only t ;; Only export section between <body> </body>)
+         )))
+
+(org-publish-project "org-thrown")
+
+(princ "\norg publish complete")
