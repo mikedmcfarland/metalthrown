@@ -148,7 +148,13 @@ code {
   padding-top: 50px;
   padding-bottom: 50px;
   margin-top:0;
+  margin-bottom:0;
   font-size: 36px;
+}
+
+.page-date{
+  margin-top:-16px;
+  padding-bottom:16px;
 }
 
 .invert pre{

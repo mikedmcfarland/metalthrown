@@ -1,0 +1,12 @@
+#!/bin/bash
+cd ./build
+git fetch origin
+git reset --hard origin/master
+git checkout master
+
+cd ../
+node buildBlog.js
+cd ./build
+git add -A
+git commit -m "commit via publish command"
+git push origin master

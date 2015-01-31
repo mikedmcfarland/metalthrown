@@ -21,10 +21,11 @@ reloadServer.watch(buildDir)
 console.log('started live-reload server')
 
 //watch src directory for changes and build with metalsmith
+var watch = ['src/*','templates/*']
 nodemon({
   script: 'buildBlog.js',
   ext: 'js css md jade org',
-  watch: ['src/*']
+  watch: watch
 })
 
-console.log('nodemon watching ./src for changes')
+console.log('nodemon watching',watch,'for changes')

@@ -21,6 +21,7 @@ var buildAll =
       root : root,
       buildDir : buildDir,
       ignoreList : [
+        '**/.gitignore',
         '**/*.org',
         '**/package.json',
         '**/node_modules'
