@@ -8,16 +8,15 @@
 (require 'org)
 
 ;;Some publishing settings
-
- (setq org-export-with-author nil)
- (setq org-export-with-toc nil)
- (setq org-html-head-include-default-style nil)
- (setq org-html-head-include-scripts nil)
- (setq org-html-html5-fancy t)
- (setq org-html-htmlize-output-type (quote css))
- (setq org-html-postamble nil)
- (setq org-html-preamble nil)
-
+(setq org-export-with-author nil
+      org-export-with-toc nil
+      org-html-head-include-default-style nil
+      org-html-head-include-scripts nil
+      org-html-html5-fancy t
+      org-html-htmlize-output-type (quote css)
+      org-html-postamble nil
+      org-html-preamble nil
+      org-export-with-tasks nil)
 
 (defvar src (expand-file-name "src" (file-name-directory load-file-name))
   "where to build all the org files")

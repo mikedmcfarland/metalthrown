@@ -2,8 +2,7 @@ extends ./main.jade
 
 block header 
     h1(id='page-header').page-header.invert=title
-    - var formatedDate = [date.getMonth()+1,date.getDate(),date.getFullYear()].join('-')
-    h5.invert.page-date !{formatedDate}
+    h5.invert.page-date !{formatDate(date)}
 
 block content
     .row

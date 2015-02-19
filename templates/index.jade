@@ -4,8 +4,7 @@ block content
   h1(id='page-header').page-header.invert most recent posts
   each post in collections.posts
     a(href=post.path): h2.relax  !{post.title}
-    - var date = [post.date.getMonth()+1,post.date.getDate()+1,post.date.getFullYear()].join('-')
-    h5 !{date}
+    h5 !{formatDate(post.date)}
     .row
       .col-md-8
         article !{post.excerpt}

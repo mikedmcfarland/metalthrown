@@ -1,0 +1,7 @@
+#!/usr/bin/emacs --script
+
+(defvar tangle-target (expand-file-name (elt argv 0) (file-name-directory load-file-name))
+  "file to tangle")
+
+(require 'org)
+(org-babel-tangle-file tangle-target)

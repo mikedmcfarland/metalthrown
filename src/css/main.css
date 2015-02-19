@@ -169,14 +169,22 @@ code {
   position: relative;
   background-color: rgb(39, 40, 34);
 }
-.invert:before, .invert:after
+.invert:before {
+  content:"";
+  background-color: rgb(39, 40, 34);
+  position:absolute;
+  top:0;
+  bottom:0;
+  width: 1500px;
+}
+.invert:after
 {
   content:"";
   background-color: rgb(39, 40, 34);
   position:absolute;
   top:0;
   bottom:0;
-  width: 3000px;
+  width: 1800px;
 }
 .invert:before
 {
