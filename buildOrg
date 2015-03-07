@@ -16,7 +16,8 @@
       org-html-htmlize-output-type (quote css)
       org-html-postamble nil
       org-html-preamble nil
-      org-export-with-tasks nil)
+      org-export-with-tasks nil
+      org-export-with-section-numbers nil)
 
 (defvar src (expand-file-name "src" (file-name-directory load-file-name))
   "where to build all the org files")
