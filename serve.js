@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var express = require('express')
 var livereload = require('livereload')
 var nodemon = require('nodemon')
@@ -15,7 +16,7 @@ console.log('serving site on port ' + port)
 
 //set up livereload server
 var reloadServer = livereload.createServer({
-  originalPath : 'http://localhost:9000'
+  originalPath : 'http://localhost:'+port
 })
 reloadServer.watch(buildDir)
 
@@ -27,7 +28,7 @@ var ignore = [
   'build/*'
 ]
 nodemon({
-  script: 'buildBlog.js',
+  exec: './buildBlog.js dev',
   ext: 'js css md jade org',
   watch: watch,
   ignore: ignore

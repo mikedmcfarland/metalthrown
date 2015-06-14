@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var minimist    = require('minimist')
 var exec        = require('child_process').exec
 var Promise     = require('promise')
@@ -19,6 +20,7 @@ var buildAll =
     console.log('starting metalsmith build')
     return blog.build({
       root : root,
+      showDrafts : devMode,
       buildDir : buildDir,
       ignoreList : [
         '**/.gitignore',

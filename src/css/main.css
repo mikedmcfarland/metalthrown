@@ -2,6 +2,7 @@
 	text-shadow: 1px 1px 1px #000;
 }
 
+
 .logo{
   font-size: 30px;
   text-shadow: 2px 2px 2px #2d2d2d;
@@ -208,8 +209,23 @@ code {
   padding-top: 10px;
 }*/
 .post-info i{
-  font-size: 32px
+  font-size: 32px;
 }
+a.icon {
+  color: #fff;
+  text-decoration: none;
+}
+a.icon:hover,
+a.icon:focus {
+  color: #e1ad83;
+  text-decoration: underline;
+}
+a.icon:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
 footer{
   padding-top: 50px
 }

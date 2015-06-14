@@ -1,4 +1,6 @@
-#!/usr/bin/emacs --script
+#!/bin/sh
+":"; exec emacs --quick --script "$0" "$@" # -*-emacs-lisp-*-
+
 ;;; This script will build all the org files located under src
 
 ;; disable auto-save and auto-backup
@@ -6,6 +8,10 @@
 (setq make-backup-files nil)
 
 (require 'org)
+(require 'ox)
+
+(defvar src (expand-file-name "src" (file-name-directory load-file-name))
+  "where to build all the org files")
 
 ;;Some publishing settings
 (setq org-export-with-author nil
@@ -16,14 +22,46 @@
       org-html-htmlize-output-type (quote css)
       org-html-postamble nil
       org-html-preamble nil
-      org-export-with-tasks nil)
+      org-export-with-tasks nil
+      org-export-with-section-numbers nil)
 
-(defvar src (expand-file-name "src" (file-name-directory load-file-name))
-  "where to build all the org files")
+
+(defun get-prism-lang (org-lang)
+  (or (cdr (assoc-string org-lang
+                         '(("emacs-lisp" . "scheme")
+                           ("js" . "javascript"))))
+      org-lang))
+
+(defun blog-org-html-src-block (src-block contents info)
+
+  (let ((lang (get-prism-lang (org-element-property :language src-block)))
+        (caption (org-export-get-caption src-block))
+        (code (org-html-format-code src-block info))
+        (label (let ((lbl (org-element-property :name src-block)))
+                 (if (not lbl) ""
+                   (format " id=\"%s\""
+                           (org-export-solidify-link-text lbl))))))
+    (if (not lang) (format "<pre class=\"example\"%s><code class=\"src example\">%s</code></pre>" label code)
+      (format
+       "<div class=\"org-src-container\">\n%s%s\n</div>"
+       (if (not caption) ""
+         (format "<label class=\"org-src-name\">%s</label>"
+                 (org-export-data caption info)))
+       (format "\n<pre class=\"src language-%s\"%s><code class=\"src language-%s\">%s</code></pre>" lang label lang code)))))
+
+(defun org-blog-html-publish-to-html (plist filename pub-dir)
+  "same as org-html-publish-to-html but with blog-html backend"
+  (org-publish-org-to 'blog-html filename
+                      (concat "." (or (plist-get plist :html-extension)
+                                      org-html-extension "html"))
+                      plist pub-dir))
+
+(org-export-define-derived-backend 'blog-html 'html
+  :translate-alist '((src-block . blog-org-html-src-block)))
+
 
 ;;Notice: Backtick and commmas here, src must be evaluated, but other parts must not?
 ;;http://stackoverflow.com/questions/9449364/elisp-alist-and-strings-type-confusion
-
 (princ (format "%s%s" "publishing org files in " src))
 (setq org-publish-project-alist
       `(("org-thrown"
@@ -32,7 +70,7 @@
 
          :publishing-directory ,src
          :recursive t
-         :publishing-function org-html-publish-to-html
+         :publishing-function org-blog-html-publish-to-html
          :headline-levels 4
          :html-extension "html"
          :body-only t ;; Only export section between <body> </body>)
