@@ -9,9 +9,8 @@ html(lang="en")
         link(rel="stylesheet", type="text/css", href="/css/main.css")
         link(rel="stylesheet", type="text/css", href="/css/base16-monokai.dark.css")
         link(href='http://fonts.googleapis.com/css?family=Raleway:800,400', rel='stylesheet', type='text/css')
-        // link(href='http://fonts.googleapis.com/css?family=Inconsolata', rel='stylesheet', type='text/css')
         link(href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600' , rel='stylesheet', type='text/css')
-        //- link(rel="stylesheet", type="text/css", href=root+"public/style/prism-base16-eighties-dark.css")
+        link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/monokai_sublime.min.css")
 
   body(role="document", data-spy="scroll", data-target="#affix-nav")
         block navigation
@@ -85,17 +84,15 @@ html(lang="en")
 
     block scripts
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
-        // script.
-        //     $('h2,h3,h4').attr('data-spy','affix')
         script(type="text/javascript", src="/js/bootstrap.min.js")
-        script(type="text/javascript", src="/js/prism.js")
-        // script.
-        //     $(document).ready(function(){
-        //         $("#sid").affix({
-        //             offset: { 
-        //                 top: 190 
-        //             }
-        //         });
-        //     });
 
-
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/javascript.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/scala.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/scheme.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/cs.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/bash.min.js")
+        script.
+          hljs.configure({tabReplace:'        '})
+          hljs.initHighlightingOnLoad()
+          
