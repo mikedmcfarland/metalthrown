@@ -26,7 +26,15 @@ var buildAll =
         '**/.gitignore',
         '**/*.org',
         '**/package.json',
-        '**/node_modules'
+        '**/node_modules/**',
+        '**/.ensime_cache/**',
+        '**/project/**',
+        '**/*.scala',
+        '**/.jshintrc',
+        '**/.ensime',
+        '**/*.sbt',
+        '**/.history',
+        '**/target/**'
       ]
     })
   })
